@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "How to update package-lock.json file in order to honour the ^ and ~ symbol?",
+      "category" : "",
+      "tags"     : "JavaScript, Node.js, npm, and PoAn (Baron) Chen",
+      "url"      : "/blog/2020/04/13/how-to-update-package-lock-json-file-in-order-to-honour-the-and-~-symbol",
+      "date"     : "13 Apr 2020"
+    } ,
+  
+    {
+      "title"    : "What is the difference between ~ and ^ in package.json?",
+      "category" : "",
+      "tags"     : "JavaScript, Node.js, npm, and PoAn (Baron) Chen",
+      "url"      : "/blog/2020/04/12/what-is-the-difference-between-~-and-in-package-json",
+      "date"     : "12 Apr 2020"
+    } ,
+  
+    {
       "title"    : "How to create an Azure IoT Central application programmatically?",
       "category" : "",
       "tags"     : "Azure, Azure IoT, Azure IoT Central, Node.js, PoAn (Baron) Chen, and TypeScript",

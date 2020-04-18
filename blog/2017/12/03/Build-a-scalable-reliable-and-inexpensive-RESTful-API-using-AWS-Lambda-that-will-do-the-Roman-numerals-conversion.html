@@ -79,6 +79,24 @@
             <time itemprop="datePublished" datetime="2017-12-03 08:30:30 +0000" class="date">03 Dec 2017</time>
         
         <h1 class="post-title" itemprop="name">Build a scalable, reliable, and inexpensive RESTful API using AWS Lambda that will do the Roman Numerals Conversion</h1>
+        
+            <p id="stats"></p>
+
+<script>
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+  if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+    var json = JSON.parse(request.response);
+    if (json[getPathName()] != undefined) {
+      document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
+    }
+  }
+};
+request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+request.send(null);
+</script>
+
+        
         <p itemprop="description" class="subtitle"></p>
     </div>
      <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
@@ -254,7 +272,7 @@ backslashes to escape our json-within-json:</p>
     <span class="k">return</span> <span class="p">{</span>
       <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
       <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="se">\"</span><span class="s">message</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Hello World</span><span class="se">\"</span><span class="s">}"</span>
+      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="si">\</span><span class="se">"</span><span class="s">message</span><span class="si">\</span><span class="se">"</span><span class="s">: </span><span class="si">\</span><span class="se">"</span><span class="s">Hello World</span><span class="si">\</span><span class="se">"</span><span class="s">}"</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Simply copy that and paste it into the Function code like this.</p>
@@ -840,13 +858,13 @@ backslashes to escape our json-within-json:</p>
 <p>Thanks to Roman library. It allows us to easily convert digital numbers to Roman Numerals with two lines of code. For example,</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="kn">import</span> <span class="nn">roman</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">roman</span><span class="o">.</span><span class="n">toRoman</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># you should get 'X'</span></code></pre></figure>
+  <span class="k">print</span><span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="n">toRoman</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># you should get 'X'</span></code></pre></figure>
 
 <p>Now, we simply need to make sure we can pass in data so that we can do the conversion. Here is how you can do it with Lambda.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>
-    <span class="n">pi</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'pi'</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'e'</span><span class="p">)</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'pi'</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">{</span>
         <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
         <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span> <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
@@ -860,7 +878,7 @@ backslashes to escape our json-within-json:</p>
     <span class="k">return</span> <span class="p">{</span>
       <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
       <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="se">\"</span><span class="s">result</span><span class="se">\"</span><span class="s">: </span><span class="si">%</span><span class="s">d}"</span> <span class="o">%</span> <span class="p">(</span><span class="n">roman</span><span class="o">.</span><span class="n">fromRoman</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d'</span><span class="p">)))</span>
+      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="si">\</span><span class="se">"</span><span class="s">result</span><span class="si">\</span><span class="se">"</span><span class="s">: %d}"</span> <span class="o">%</span> <span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="n">fromRoman</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d'</span><span class="p">)))</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Simply update your Lambda function to the one above. The Roman Numerals Conversion should now works. Here is what it might looks like,</p>
@@ -944,21 +962,7 @@ backslashes to escape our json-within-json:</p>
   <script type="text/javascript">
     var disqus_config = function () {
       this.page.url = document.location.href;
-      // this will make sure
-      // when url became /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0/
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0.html
-      // will all back to /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // for disqus to recongize the post
-      var pathname = document.location.pathname;
-      var dividerList = pathname.split("/");
-      if(dividerList[dividerList.length - 1] == "") {
-        // there exist trailing "/", we should remove them
-        pathname = pathname.slice(0, -1)
-      }
-      // remove .html if any
-      pathname = pathname.replace(".html", "");
-      this.page.identifier = pathname;
+      this.page.identifier = getPathName();
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
@@ -970,6 +974,7 @@ backslashes to escape our json-within-json:</p>
   <noscript>
   Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
+
 
       <footer>
   <p>Disclaimer: the theme of the site is largely based on <a href="https://github.com/willianjusten/will-jekyll-template">will-jekyll-template</a> by <a href="https://willianjusten.com.br">Willian Justen</a></p><br>

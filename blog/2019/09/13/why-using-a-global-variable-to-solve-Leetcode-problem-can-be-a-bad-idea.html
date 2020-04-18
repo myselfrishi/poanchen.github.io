@@ -79,6 +79,24 @@
             <time itemprop="datePublished" datetime="2019-09-13 08:30:30 +0000" class="date">13 Sep 2019</time>
         
         <h1 class="post-title" itemprop="name">Why using a global variable to solve Leetcode problem can be a bad idea?</h1>
+        
+            <p id="stats"></p>
+
+<script>
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+  if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+    var json = JSON.parse(request.response);
+    if (json[getPathName()] != undefined) {
+      document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
+    }
+  }
+};
+request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+request.send(null);
+</script>
+
+        
         <p itemprop="description" class="subtitle"></p>
     </div>
      <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
@@ -162,12 +180,12 @@
   <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
       <span class="k">return</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
   <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ans</span></code></pre></figure>
+    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ans</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea/simplePreorderTraversal.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -187,21 +205,21 @@
   <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
       <span class="k">return</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
   <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ans</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ans</span>
   <span class="k">def</span> <span class="nf">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">correctAnswer</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="c1"># ...
 </span>  <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">testCases</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-    <span class="n">testCasesAnswer</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="n">testCases</span> <span class="o">=</span> <span class="p">[...]</span>
+    <span class="n">testCasesAnswer</span> <span class="o">=</span> <span class="p">[...]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">correctness</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">testCases</span><span class="p">:</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">preorderTraversal</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">preorderTraversal</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
       <span class="k">if</span> <span class="n">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">testCasesAnswer</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
         <span class="n">correctness</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">break</span>
@@ -278,21 +296,7 @@
   <script type="text/javascript">
     var disqus_config = function () {
       this.page.url = document.location.href;
-      // this will make sure
-      // when url became /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0/
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0.html
-      // will all back to /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // for disqus to recongize the post
-      var pathname = document.location.pathname;
-      var dividerList = pathname.split("/");
-      if(dividerList[dividerList.length - 1] == "") {
-        // there exist trailing "/", we should remove them
-        pathname = pathname.slice(0, -1)
-      }
-      // remove .html if any
-      pathname = pathname.replace(".html", "");
-      this.page.identifier = pathname;
+      this.page.identifier = getPathName();
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
@@ -304,6 +308,7 @@
   <noscript>
   Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
+
 
       <footer>
   <p>Disclaimer: the theme of the site is largely based on <a href="https://github.com/willianjusten/will-jekyll-template">will-jekyll-template</a> by <a href="https://willianjusten.com.br">Willian Justen</a></p><br>

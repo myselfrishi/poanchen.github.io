@@ -79,6 +79,24 @@
             <time itemprop="datePublished" datetime="2017-10-31 08:30:30 +0000" class="date">31 Oct 2017</time>
         
         <h1 class="post-title" itemprop="name">Installing Marsyas with Python bindings on Ubuntu 14.04.3 LTS - 64 bits</h1>
+        
+            <p id="stats"></p>
+
+<script>
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+  if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+    var json = JSON.parse(request.response);
+    if (json[getPathName()] != undefined) {
+      document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
+    }
+  }
+};
+request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+request.send(null);
+</script>
+
+        
         <p itemprop="description" class="subtitle"></p>
     </div>
      <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
@@ -243,10 +261,10 @@
   <span class="kn">from</span> <span class="nn">marsyas</span> <span class="kn">import</span> <span class="o">*</span>
   <span class="kn">from</span> <span class="nn">marsyas_util</span> <span class="kn">import</span> <span class="o">*</span>
   <span class="n">y_data</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="n">system</span> <span class="o">=</span> <span class="n">marsyas</span><span class="o">.</span><span class="n">system_from_script_file</span><span class="p">(</span><span class="s">"sample.mrs"</span><span class="p">)</span>
-  <span class="k">while</span> <span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">getControl</span><span class="p">(</span><span class="s">"SoundFileSource/input/mrs_bool/hasData"</span><span class="p">)</span><span class="o">.</span><span class="n">to_bool</span><span class="p">()):</span>
-      <span class="n">system</span><span class="o">.</span><span class="n">tick</span><span class="p">()</span>
-      <span class="n">y_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">getControl</span><span class="p">(</span><span class="s">"Selector/selection/mrs_realvec/processedData"</span><span class="p">)</span><span class="o">.</span><span class="n">to_realvec</span><span class="p">())</span>
+  <span class="n">system</span> <span class="o">=</span> <span class="n">marsyas</span><span class="p">.</span><span class="n">system_from_script_file</span><span class="p">(</span><span class="s">"sample.mrs"</span><span class="p">)</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="n">getControl</span><span class="p">(</span><span class="s">"SoundFileSource/input/mrs_bool/hasData"</span><span class="p">).</span><span class="n">to_bool</span><span class="p">()):</span>
+      <span class="n">system</span><span class="p">.</span><span class="n">tick</span><span class="p">()</span>
+      <span class="n">y_data</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="n">getControl</span><span class="p">(</span><span class="s">"Selector/selection/mrs_realvec/processedData"</span><span class="p">).</span><span class="n">to_realvec</span><span class="p">())</span>
       <span class="n">y_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;</span><span class="c1">#42;=  44100 / 1025 # Sampling Rate / FFT Size
 </span>  <span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_data</span><span class="p">)),</span> <span class="n">y_data</span><span class="p">)</span>
   <span class="n">savefig</span><span class="p">(</span><span class="s">'sample.png'</span><span class="p">)</span></code></pre></figure>
@@ -320,21 +338,7 @@
   <script type="text/javascript">
     var disqus_config = function () {
       this.page.url = document.location.href;
-      // this will make sure
-      // when url became /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0/
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0.html
-      // will all back to /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // for disqus to recongize the post
-      var pathname = document.location.pathname;
-      var dividerList = pathname.split("/");
-      if(dividerList[dividerList.length - 1] == "") {
-        // there exist trailing "/", we should remove them
-        pathname = pathname.slice(0, -1)
-      }
-      // remove .html if any
-      pathname = pathname.replace(".html", "");
-      this.page.identifier = pathname;
+      this.page.identifier = getPathName();
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
@@ -346,6 +350,7 @@
   <noscript>
   Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
+
 
       <footer>
   <p>Disclaimer: the theme of the site is largely based on <a href="https://github.com/willianjusten/will-jekyll-template">will-jekyll-template</a> by <a href="https://willianjusten.com.br">Willian Justen</a></p><br>

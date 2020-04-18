@@ -79,6 +79,24 @@
             <time itemprop="datePublished" datetime="2019-05-18 08:30:30 +0000" class="date">18 May 2019</time>
         
         <h1 class="post-title" itemprop="name">How to get an interview with Microsoft and what is their interview process like?</h1>
+        
+            <p id="stats"></p>
+
+<script>
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+  if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+    var json = JSON.parse(request.response);
+    if (json[getPathName()] != undefined) {
+      document.getElementById('stats').innerHTML = `${Number(json[getPathName()]).toLocaleString()} views`;
+    }
+  }
+};
+request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+request.send(null);
+</script>
+
+        
         <p itemprop="description" class="subtitle"></p>
     </div>
      <a class="down" data-scroll href="#scroll"><svg class="icon icon-angle-down"><use xlink:href="#icon-angle-down"></use></svg></a>
@@ -336,21 +354,7 @@ Note: 45 mins Interview with a Software Engineer - The interviewer would most li
   <script type="text/javascript">
     var disqus_config = function () {
       this.page.url = document.location.href;
-      // this will make sure
-      // when url became /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0/
-      // or /blog/2016/11/15/how-to-add-background-music-in-processing-3.0.html
-      // will all back to /blog/2016/11/15/how-to-add-background-music-in-processing-3.0
-      // for disqus to recongize the post
-      var pathname = document.location.pathname;
-      var dividerList = pathname.split("/");
-      if(dividerList[dividerList.length - 1] == "") {
-        // there exist trailing "/", we should remove them
-        pathname = pathname.slice(0, -1)
-      }
-      // remove .html if any
-      pathname = pathname.replace(".html", "");
-      this.page.identifier = pathname;
+      this.page.identifier = getPathName();
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
@@ -362,6 +366,7 @@ Note: 45 mins Interview with a Software Engineer - The interviewer would most li
   <noscript>
   Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
+
 
       <footer>
   <p>Disclaimer: the theme of the site is largely based on <a href="https://github.com/willianjusten/will-jekyll-template">will-jekyll-template</a> by <a href="https://willianjusten.com.br">Willian Justen</a></p><br>

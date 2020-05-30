@@ -272,7 +272,7 @@ backslashes to escape our json-within-json:</p>
     <span class="k">return</span> <span class="p">{</span>
       <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
       <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="si">\</span><span class="se">"</span><span class="s">message</span><span class="si">\</span><span class="se">"</span><span class="s">: </span><span class="si">\</span><span class="se">"</span><span class="s">Hello World</span><span class="si">\</span><span class="se">"</span><span class="s">}"</span>
+      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="se">\"</span><span class="s">message</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Hello World</span><span class="se">\"</span><span class="s">}"</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Simply copy that and paste it into the Function code like this.</p>
@@ -878,7 +878,7 @@ backslashes to escape our json-within-json:</p>
     <span class="k">return</span> <span class="p">{</span>
       <span class="s">"statusCode"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
       <span class="s">"headers"</span><span class="p">:</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">},</span>
-      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="si">\</span><span class="se">"</span><span class="s">result</span><span class="si">\</span><span class="se">"</span><span class="s">: %d}"</span> <span class="o">%</span> <span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="n">fromRoman</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d'</span><span class="p">)))</span>
+      <span class="s">"body"</span><span class="p">:</span> <span class="s">"{</span><span class="se">\"</span><span class="s">result</span><span class="se">\"</span><span class="s">: %d}"</span> <span class="o">%</span> <span class="p">(</span><span class="n">roman</span><span class="p">.</span><span class="n">fromRoman</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'d'</span><span class="p">)))</span>
     <span class="p">}</span></code></pre></figure>
 
 <p>Simply update your Lambda function to the one above. The Roman Numerals Conversion should now works. Here is what it might looks like,</p>

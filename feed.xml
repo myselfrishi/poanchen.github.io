@@ -5,9 +5,9 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Apr 2020 06:10:22 +0000</pubDate>
-    <lastBuildDate>Sat, 18 Apr 2020 06:10:22 +0000</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <pubDate>Sat, 30 May 2020 18:20:58 +0000</pubDate>
+    <lastBuildDate>Sat, 30 May 2020 18:20:58 +0000</lastBuildDate>
+    <generator>Jekyll v4.1.0</generator>
     
       <item>
         <title>How to update package-lock.json file in order to honour the ^ and ~ symbol?</title>

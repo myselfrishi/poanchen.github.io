@@ -205,9 +205,9 @@ Easily connect, monitor, and manage your Internet of Things (IoT) assets at scal
 
 <p>Next, you would also need to hard-code your sensitive information in the code so that Azure IoT Central can use it to create resource for you. (It is recommended that you use <a href="https://github.com/poanchen/auto-submit-pro-unlimited-work-hours-form/blob/master/.env.example">environment variable</a> to store your secrets instead of putting it in the code)</p>
 
-<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="kd">const</span> <span class="nx">SUBSCRIPTIONID</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">FILL IN SUB ID</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">RESOURCEGROUPNAME</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">myResourceGroup</span><span class="dl">"</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">RESOURCENAME</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">my-app-name</span><span class="dl">"</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript">  <span class="kd">const</span> <span class="nx">SUBSCRIPTIONID</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">FILL IN SUB ID</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">RESOURCEGROUPNAME</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">myResourceGroup</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">RESOURCENAME</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">my-app-name</span><span class="dl">"</span><span class="p">;</span>
 
   <span class="kd">const</span> <span class="nx">NAME</span><span class="p">:</span> <span class="nx">OperationInputs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">name</span><span class="p">:</span> <span class="nx">RESOURCENAME</span>

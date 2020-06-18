@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to make use of the Google Analytics to show page views on a post?",
+      "category" : "",
+      "tags"     : "Azure Blob Storage, Google Analytics, Python, JSON, XML, and PoAn (Baron) Chen",
+      "url"      : "/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post",
+      "date"     : "17 Jun 2020"
+    } ,
+  
+    {
       "title"    : "How to update package-lock.json file in order to honour the ^ and ~ symbol?",
       "category" : "",
       "tags"     : "JavaScript, Node.js, npm, and PoAn (Baron) Chen",

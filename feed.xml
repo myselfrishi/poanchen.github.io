@@ -5,9 +5,31 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 May 2020 18:20:58 +0000</pubDate>
-    <lastBuildDate>Sat, 30 May 2020 18:20:58 +0000</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2020 06:56:45 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2020 06:56:45 +0000</lastBuildDate>
     <generator>Jekyll v4.1.0</generator>
+    
+      <item>
+        <title>How to make use of the Google Analytics to show page views on a post?</title>
+        <description>&lt;p&gt;Ever wonder how to show views on your website? You are in luck, this post will cover all the technical details that you need to get it started. The simplest way to show how many views this post has is to have a count that got increment it every time when there is a visit. Sounds good and all until, someone kept refreshing the same page to max out the number. Now, this person would be thinking, we just need some unique identifier to identify this person, for example, IP address and then we would only counts them as one...</description>
+        <pubDate>Wed, 17 Jun 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/06/17/How-to-make-use-of-the-Google-Analytics-to-show-page-views-on-a-post</guid>
+        
+        <category>Azure Blob Storage</category>
+        
+        <category>Google Analytics</category>
+        
+        <category>Python</category>
+        
+        <category>JSON</category>
+        
+        <category>XML</category>
+        
+        <category>PoAn (Baron) Chen</category>
+        
+        
+      </item>
     
       <item>
         <title>How to update package-lock.json file in order to honour the ^ and ~ symbol?</title>
@@ -175,20 +197,6 @@
         <category>Microsoft</category>
         
         <category>Interview Prep</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to calculate time complexity of an algorithm?</title>
-        <description>&lt;p&gt;Knowing how fast your algorithm runs is extremely important. Often times, you will get asked to determine your algorithm performance in a big-O sense during interview. You will be expected to know how to calculate the time and space complexity of your code, sometimes you even need to explain how you get there. In some cases, it can be pretty tricky to get it right. In this article, I am going to show you guys how to do things right.&lt;/p&gt; &lt;p&gt;In most of the cases, you are going to see these kind of Big-O running time in your code.&lt;/p&gt; &lt;p&gt;&lt;img...</description>
-        <pubDate>Fri, 23 Nov 2018 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Algorithm</category>
         
         
       </item>

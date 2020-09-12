@@ -96,7 +96,7 @@
         }
       }
     };
-    request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+    request.open('GET', 'https://poanchengithubio.blob.core.windows.net/poanchen/poanchen - views.json?sp=rl&st=2020-09-12T11:36:59Z&se=2030-09-13T11:36:00Z&sv=2019-12-12&sr=b&sig=91DC1qOBflhH4wv1YnUyiPUzegnwiy1mkWaXM%2B36Ft8%3D', true);
     request.send(null);
   });
 </script>
@@ -175,12 +175,12 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use username_exists() function in WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
@@ -189,7 +189,7 @@
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a><br />
 <a href="https://www.jenrenalcare.com/upload/poanchen.github.io/sample-code/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">Live link</a> hosted on <a href="https://www.jenrenalcare.com" target="_blank">JenRenalCare.com</a></p>

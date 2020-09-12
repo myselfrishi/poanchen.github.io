@@ -96,7 +96,7 @@
         }
       }
     };
-    request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+    request.open('GET', 'https://poanchengithubio.blob.core.windows.net/poanchen/poanchen - views.json?sp=rl&st=2020-09-12T11:36:59Z&se=2030-09-13T11:36:00Z&sv=2019-12-12&sr=b&sig=91DC1qOBflhH4wv1YnUyiPUzegnwiy1mkWaXM%2B36Ft8%3D', true);
     request.send(null);
   });
 </script>
@@ -174,17 +174,17 @@
 
 <h2 id="php-code-for-writing-a-function-that-send-a-welcome-email-to-user">PHP code for writing a function that send a welcome email to user</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">function</span> <span class="nf">send_welcome_email_to_new_user</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$user</span> <span class="o">=</span> <span class="nx">get_userdata</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">);</span>
-    <span class="nv">$user_email</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">user_email</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">function</span> <span class="n">send_welcome_email_to_new_user</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$user</span> <span class="o">=</span> <span class="nf">get_userdata</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">);</span>
+    <span class="nv">$user_email</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">user_email</span><span class="p">;</span>
     <span class="c1">// for simplicity, lets assume that user has typed their first and last name when they sign up</span>
-    <span class="nv">$user_full_name</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">user_firstname</span> <span class="o">.</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">user_lastname</span><span class="p">;</span>
+    <span class="nv">$user_full_name</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">user_firstname</span> <span class="mf">.</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">user_lastname</span><span class="p">;</span>
 
     <span class="c1">// Now we are ready to build our welcome email</span>
     <span class="nv">$to</span> <span class="o">=</span> <span class="nv">$user_email</span><span class="p">;</span>
-    <span class="nv">$subject</span> <span class="o">=</span> <span class="s2">"Hi "</span> <span class="o">.</span> <span class="nv">$user_full_name</span> <span class="o">.</span> <span class="s2">", welcome to our site!"</span><span class="p">;</span>
+    <span class="nv">$subject</span> <span class="o">=</span> <span class="s2">"Hi "</span> <span class="mf">.</span> <span class="nv">$user_full_name</span> <span class="mf">.</span> <span class="s2">", welcome to our site!"</span><span class="p">;</span>
     <span class="nv">$body</span> <span class="o">=</span> <span class="s1">'
-              &lt;h1&gt;Dear '</span> <span class="o">.</span> <span class="nv">$user_full_name</span> <span class="o">.</span> <span class="s1">',&lt;/h1&gt;&lt;/br&gt;
+              &lt;h1&gt;Dear '</span> <span class="mf">.</span> <span class="nv">$user_full_name</span> <span class="mf">.</span> <span class="s1">',&lt;/h1&gt;&lt;/br&gt;
               &lt;p&gt;Thank you for joining our site. Your account is now active.&lt;/p&gt;
               &lt;p&gt;Please go ahead and navigate around your account.&lt;/p&gt;
               &lt;p&gt;Let me know if you have further questions, I am here to help.&lt;/p&gt;
@@ -193,10 +193,10 @@
               &lt;p&gt;poanchen&amp;lt;/p&gt;
     '</span><span class="p">;</span>
     <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'Content-Type: text/html; charset=UTF-8'</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">wp_mail</span><span class="p">(</span><span class="nv">$to</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email has been successfully sent to user whose email is "</span> <span class="o">.</span> <span class="nv">$user_email</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">wp_mail</span><span class="p">(</span><span class="nv">$to</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email has been successfully sent to user whose email is "</span> <span class="mf">.</span> <span class="nv">$user_email</span><span class="p">);</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email failed to sent to user whose email is "</span> <span class="o">.</span> <span class="nv">$user_email</span><span class="p">);</span>
+      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email failed to sent to user whose email is "</span> <span class="mf">.</span> <span class="nv">$user_email</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span></code></pre></figure>
 
@@ -206,17 +206,17 @@
 
 <h2 id="full-php-code-for-sending-a-welcome-email-to-user">Full PHP code for sending a welcome email to user</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">function</span> <span class="nf">send_welcome_email_to_new_user</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$user</span> <span class="o">=</span> <span class="nx">get_userdata</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">);</span>
-    <span class="nv">$user_email</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">user_email</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">function</span> <span class="n">send_welcome_email_to_new_user</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$user</span> <span class="o">=</span> <span class="nf">get_userdata</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">);</span>
+    <span class="nv">$user_email</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">user_email</span><span class="p">;</span>
     <span class="c1">// for simplicity, lets assume that user has typed their first and last name when they sign up</span>
-    <span class="nv">$user_full_name</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">user_firstname</span> <span class="o">.</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">user_lastname</span><span class="p">;</span>
+    <span class="nv">$user_full_name</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">user_firstname</span> <span class="mf">.</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="n">user_lastname</span><span class="p">;</span>
 
     <span class="c1">// Now we are ready to build our welcome email</span>
     <span class="nv">$to</span> <span class="o">=</span> <span class="nv">$user_email</span><span class="p">;</span>
-    <span class="nv">$subject</span> <span class="o">=</span> <span class="s2">"Hi "</span> <span class="o">.</span> <span class="nv">$user_full_name</span> <span class="o">.</span> <span class="s2">", welcome to our site!"</span><span class="p">;</span>
+    <span class="nv">$subject</span> <span class="o">=</span> <span class="s2">"Hi "</span> <span class="mf">.</span> <span class="nv">$user_full_name</span> <span class="mf">.</span> <span class="s2">", welcome to our site!"</span><span class="p">;</span>
     <span class="nv">$body</span> <span class="o">=</span> <span class="s1">'
-              &lt;h1&gt;Dear '</span> <span class="o">.</span> <span class="nv">$user_full_name</span> <span class="o">.</span> <span class="s1">',&lt;/h1&gt;&lt;/br&gt;
+              &lt;h1&gt;Dear '</span> <span class="mf">.</span> <span class="nv">$user_full_name</span> <span class="mf">.</span> <span class="s1">',&lt;/h1&gt;&lt;/br&gt;
               &lt;p&gt;Thank you for joining our site. Your account is now active.&lt;/p&gt;
               &lt;p&gt;Please go ahead and navigate around your account.&lt;/p&gt;
               &lt;p&gt;Let me know if you have further questions, I am here to help.&lt;/p&gt;
@@ -225,15 +225,15 @@
               &lt;p&gt;poanchen&lt;/p&gt;
     '</span><span class="p">;</span>
     <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'Content-Type: text/html; charset=UTF-8'</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">wp_mail</span><span class="p">(</span><span class="nv">$to</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email has been successfully sent to user whose email is "</span> <span class="o">.</span> <span class="nv">$user_email</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">wp_mail</span><span class="p">(</span><span class="nv">$to</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$body</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email has been successfully sent to user whose email is "</span> <span class="mf">.</span> <span class="nv">$user_email</span><span class="p">);</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email failed to sent to user whose email is "</span> <span class="o">.</span> <span class="nv">$user_email</span><span class="p">);</span>
+      <span class="nb">error_log</span><span class="p">(</span><span class="s2">"email failed to sent to user whose email is "</span> <span class="mf">.</span> <span class="nv">$user_email</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="c1">// THE ONLY DIFFERENCE IS THIS LINE</span>
-  <span class="nx">add_action</span><span class="p">(</span><span class="s1">'user_register'</span><span class="p">,</span> <span class="s1">'send_welcome_email_to_new_user'</span><span class="p">);</span>
+  <span class="nf">add_action</span><span class="p">(</span><span class="s1">'user_register'</span><span class="p">,</span> <span class="s1">'send_welcome_email_to_new_user'</span><span class="p">);</span>
   <span class="c1">// THE ONLY DIFFERENCE IS THIS LINE</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/17/how-to-automatically-send-welcome-email-to-user-when-they-sign-up-in-wp/functions.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>

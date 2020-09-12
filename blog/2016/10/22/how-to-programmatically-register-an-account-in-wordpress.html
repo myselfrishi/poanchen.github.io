@@ -96,7 +96,7 @@
         }
       }
     };
-    request.open('GET', 'https://poanchen.blob.core.windows.net/poanchen/poanchen.github.io%20-%20views.json?sp=r&st=2020-04-18T03:32:30Z&se=2030-04-18T11:32:30Z&spr=https&sv=2019-02-02&sr=b&sig=0d1sCUnCzdw8IeO8GwNsuKiGgot3sQuwF3QPsboa2uw%3D', true);
+    request.open('GET', 'https://poanchengithubio.blob.core.windows.net/poanchen/poanchen - views.json?sp=rl&st=2020-09-12T11:36:59Z&se=2030-09-13T11:36:00Z&sv=2019-12-12&sr=b&sig=91DC1qOBflhH4wv1YnUyiPUzegnwiy1mkWaXM%2B36Ft8%3D', true);
     request.send(null);
   });
 </script>
@@ -175,12 +175,12 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
@@ -189,7 +189,7 @@
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/16/how-to-create-simple-rest-api-in-php-and-call-them-in-js/checkIfUsernameExist.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
@@ -256,7 +256,7 @@ At this point, we may try to add some error code so that we know what is actuall
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nb">define</span><span class="p">(</span><span class="s2">"USERNAME_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="nb">define</span><span class="p">(</span><span class="s2">"EMAIL_ADDRESS_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -266,22 +266,22 @@ At this point, we may try to add some error code so that we know what is actuall
   <span class="nb">define</span><span class="p">(</span><span class="s2">"FAIL"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
-  <span class="nv">$email</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
-  <span class="nv">$password</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$email</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
+  <span class="nv">$password</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
 
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"email"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"password"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p>We have added some error code, so that in the front-end, when we receive the result of 2, then we know that the email address is already exist. Let’s try to add some validation to check if the username exist or not. If it is true, then return the error code that we pre-defined.</p>
 
@@ -289,7 +289,7 @@ At this point, we may try to add some error code so that we know what is actuall
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nb">define</span><span class="p">(</span><span class="s2">"USERNAME_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="nb">define</span><span class="p">(</span><span class="s2">"EMAIL_ADDRESS_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -300,29 +300,29 @@ At this point, we may try to add some error code so that we know what is actuall
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
   <span class="nv">$errors</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
-  <span class="nv">$email</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
-  <span class="nv">$password</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$email</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
+  <span class="nv">$password</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
 
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"email"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"password"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"errors"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$errors</span><span class="p">;</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">SUCCESS</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">SUCCESS</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p>Now, when we query the PHP code, we should see something like this.</p>
 
@@ -408,7 +408,7 @@ Now, let’s try to combine this with the front-end code, so that we can actuall
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nb">define</span><span class="p">(</span><span class="s2">"USERNAME_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="nb">define</span><span class="p">(</span><span class="s2">"EMAIL_ADDRESS_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -419,39 +419,39 @@ Now, let’s try to combine this with the front-end code, so that we can actuall
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
   <span class="nv">$errors</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
-  <span class="nv">$email</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
-  <span class="nv">$password</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$email</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
+  <span class="nv">$password</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
 
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"email"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"password"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">is_email</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">NOT_A_VALID_EMAIL_ADDRESS</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">is_email</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">NOT_A_VALID_EMAIL_ADDRESS</span><span class="p">;</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">email_exists</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">EMAIL_ADDRESS_ALREADY_EXIST</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nf">email_exists</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">EMAIL_ADDRESS_ALREADY_EXIST</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"errors"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$errors</span><span class="p">;</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">SUCCESS</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">SUCCESS</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="html-code-to-check-if-users-email-is-valid-or-not">HTML Code to check if user’s email is valid or not.</h2>
 
@@ -540,7 +540,7 @@ Now, let’s try to combine this with the front-end code, so that we can actuall
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nb">define</span><span class="p">(</span><span class="s2">"USERNAME_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="nb">define</span><span class="p">(</span><span class="s2">"EMAIL_ADDRESS_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -551,45 +551,45 @@ Now, let’s try to combine this with the front-end code, so that we can actuall
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
   <span class="nv">$errors</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
-  <span class="nv">$email</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
-  <span class="nv">$password</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$email</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
+  <span class="nv">$password</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
 
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"email"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"password"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">is_email</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">NOT_A_VALID_EMAIL_ADDRESS</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">is_email</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">NOT_A_VALID_EMAIL_ADDRESS</span><span class="p">;</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">email_exists</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">EMAIL_ADDRESS_ALREADY_EXIST</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nf">email_exists</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">EMAIL_ADDRESS_ALREADY_EXIST</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$password</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$password</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">PASSWORD_LENGTH_IS_TOO_SHORT</span><span class="p">;</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">PASSWORD_LENGTH_IS_TOO_SHORT</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"errors"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$errors</span><span class="p">;</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">SUCCESS</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">SUCCESS</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="html-code-to-check-if-users-password-is-at-least-length-of-5">HTML Code to check if user’s password is at least length of 5.</h2>
 
@@ -691,7 +691,7 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="c1">// Include the wp-load.php so that we can use WordPress API</span>
   <span class="nv">$parse_uri</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span> <span class="s1">'wp-content'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'SCRIPT_FILENAME'</span><span class="p">]</span> <span class="p">);</span>
-  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
+  <span class="k">require_once</span><span class="p">(</span> <span class="nv">$parse_uri</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="mf">.</span> <span class="s1">'wp-load.php'</span> <span class="p">);</span>
 
   <span class="nb">define</span><span class="p">(</span><span class="s2">"USERNAME_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="nb">define</span><span class="p">(</span><span class="s2">"EMAIL_ADDRESS_ALREADY_EXIST"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
@@ -702,56 +702,56 @@ Okay. Now, we have user’s username, email and password. I think it is time to 
 
   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
   <span class="nv">$errors</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-  <span class="nv">$username</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
-  <span class="nv">$email</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
-  <span class="nv">$password</span> <span class="o">=</span> <span class="nx">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
+  <span class="nv">$username</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]);</span>
+  <span class="nv">$email</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'email'</span><span class="p">]);</span>
+  <span class="nv">$password</span> <span class="o">=</span> <span class="nf">sanitize_text_field</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]);</span>
 
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$username</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"email"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
   <span class="nv">$data</span><span class="p">[</span><span class="s2">"password"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$password</span><span class="p">;</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">username_exists</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">USERNAME_ALREADY_EXIST</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">is_email</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">NOT_A_VALID_EMAIL_ADDRESS</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">is_email</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">NOT_A_VALID_EMAIL_ADDRESS</span><span class="p">;</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">email_exists</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">EMAIL_ADDRESS_ALREADY_EXIST</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nf">email_exists</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">EMAIL_ADDRESS_ALREADY_EXIST</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$password</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$password</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">PASSWORD_LENGTH_IS_TOO_SHORT</span><span class="p">;</span>
+      <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="no">PASSWORD_LENGTH_IS_TOO_SHORT</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s2">"errors"</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$errors</span><span class="p">;</span>
-    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+    <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$username</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$password</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nv">$random_password</span> <span class="o">=</span> <span class="nx">wp_generate_password</span><span class="p">(</span><span class="nv">$length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="nv">$include_standard_special_chars</span><span class="o">=</span><span class="kc">false</span><span class="p">);</span>
-      <span class="nv">$userID</span> <span class="o">=</span> <span class="nx">wp_create_user</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$random_password</span><span class="p">,</span> <span class="nv">$email</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">is_wp_error</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">wp_set_password</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nv">$userID</span><span class="p">);</span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">SUCCESS</span><span class="p">;</span>
+      <span class="nv">$random_password</span> <span class="o">=</span> <span class="nf">wp_generate_password</span><span class="p">(</span><span class="nv">$length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="nv">$include_standard_special_chars</span><span class="o">=</span><span class="kc">false</span><span class="p">);</span>
+      <span class="nv">$userID</span> <span class="o">=</span> <span class="nf">wp_create_user</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$random_password</span><span class="p">,</span> <span class="nv">$email</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">is_wp_error</span><span class="p">(</span><span class="nv">$user_id</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nf">wp_set_password</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nv">$userID</span><span class="p">);</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">SUCCESS</span><span class="p">;</span>
       <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-      <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">FAIL</span><span class="p">;</span>
+      <span class="nv">$data</span><span class="p">[</span><span class="s2">"result"</span><span class="p">]</span> <span class="o">=</span> <span class="no">FAIL</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="c1">// return all our data to an AJAX call</span>
-  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="nx">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
+  <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="no">JSON_PRETTY_PRINT</span><span class="p">);</span></code></pre></figure>
 
 <p><a href="https://github.com/poanchen/code-for-blog/blob/master/2016/10/22/how-to-programmatically-register-an-account-in-wordpress/tryRegisterAnAccount.php" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a><br />
 <a href="https://codepen.io/poanchen/pen/gLmYOB?editors=101" target="_blank">Try it</a> on <a href="https://codepen.io" target="_blank">CodePen</a></p>

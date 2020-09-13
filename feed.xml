@@ -5,9 +5,31 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Sep 2020 12:06:30 +0000</pubDate>
-    <lastBuildDate>Sat, 12 Sep 2020 12:06:30 +0000</lastBuildDate>
+    <pubDate>Sun, 13 Sep 2020 22:47:07 +0000</pubDate>
+    <lastBuildDate>Sun, 13 Sep 2020 22:47:07 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?</title>
+        <description>&lt;p&gt;I often forget to water my plants, and as a result they would get really dry and sometimes even die. So I thought it would be cool to build an automotive Wi-Fi plant watering system that will continue to water my plant until it reaches a certain level of moist. In addition, I am planning to leverage &lt;a href=&quot;https://azure.microsoft.com/services/iot-central&quot;&gt;Azure IoT Central&lt;/a&gt;, so that I have a nice dashboard that I can work with and check when was the last time the system watered my plant as well as the moist level for the past few hours/days/weeks. In this tutorial, I...</description>
+        <pubDate>Sun, 13 Sep 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central</guid>
+        
+        <category>Azure IoT Central</category>
+        
+        <category>Arduino</category>
+        
+        <category>Arduino IDE</category>
+        
+        <category>DIY</category>
+        
+        <category>ESP8266</category>
+        
+        <category>Wi-Fi</category>
+        
+        
+      </item>
     
       <item>
         <title>How to make use of the Google Analytics to show page views on a post?</title>
@@ -181,22 +203,6 @@
         <category>Async/await</category>
         
         <category>Promise</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to get an interview with Microsoft and what is their interview process like?</title>
-        <description>&lt;p&gt;This post talks about how one could get an interview with Microsoft for a Software Engineer role as well as its process. If you already got an interview with them, simply &lt;a href=&quot;#interview-process-at-microsoft&quot;&gt;skip&lt;/a&gt; to the part where I discuss its interview process.&lt;/p&gt; &lt;h2 id=&quot;how-one-could-get-an-interview-with-microsoft-or-any-other-company-by-all-means&quot;&gt;How one could get an interview with Microsoft or any other company by all means&lt;/h2&gt; &lt;p&gt;&lt;img src=&quot;\img\2019\05\20\How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like/Microsoft visit.jpg&quot; alt=&quot;Me visiting Microsoft Redmond Campus&quot; /&gt;&lt;/p&gt; &lt;p&gt;As I have been interviewing with Microsoft for multiple times in the past three years, I feel I am somewhat qualify to talk about it. As you can imagine, some people would say...</description>
-        <pubDate>Sat, 18 May 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/05/18/How-to-get-an-interview-with-Microsoft-and-what-is-their-interview-process-like</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Microsoft</category>
-        
-        <category>Interview Prep</category>
         
         
       </item>

@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?",
+      "category" : "",
+      "tags"     : "Azure IoT Central, Arduino, Arduino IDE, DIY, ESP8266, and Wi-Fi",
+      "url"      : "/blog/2020/09/13/how-to-make-an-automotive-wi-fi-plant-watering-system-that-is-connected-to-azure-iot-central",
+      "date"     : "13 Sep 2020"
+    } ,
+  
+    {
       "title"    : "How to make use of the Google Analytics to show page views on a post?",
       "category" : "",
       "tags"     : "Azure Blob Storage, Google Analytics, Python, JSON, XML, and PoAn (Baron) Chen",

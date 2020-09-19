@@ -5,9 +5,23 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Sep 2020 23:04:21 +0000</pubDate>
-    <lastBuildDate>Sun, 13 Sep 2020 23:04:21 +0000</lastBuildDate>
+    <pubDate>Sat, 19 Sep 2020 13:23:19 +0000</pubDate>
+    <lastBuildDate>Sat, 19 Sep 2020 13:23:19 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>What to do when git branch has diverged?</title>
+        <description>&lt;p&gt;Ever try to commit and push your changes to master branch and see this annoying message stated that your branch and ‘origin/master’ branch have diverged,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\09\19\what-to-do-when-git-branch-has-diverged/branch diverged.JPG&quot; alt=&quot;branch diverged&quot; /&gt;&lt;/p&gt; &lt;p&gt;You are in luck, in this tutorial, we are going to talk about how this happen, how to fix it and how to avoid this from happening in the future. Before we talk about how to fix it, we should talk about how this can happen to you. I have drawn the diagram to show you what happened, here is the picture,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\09\19\what-to-do-when-git-branch-has-diverged/branch diverged diagram.JPG&quot; alt=&quot;branch diverged diagram&quot;...</description>
+        <pubDate>Sat, 19 Sep 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/09/19/what-to-do-when-git-branch-has-diverged</guid>
+        
+        <category>Git</category>
+        
+        <category>GitHub</category>
+        
+        
+      </item>
     
       <item>
         <title>How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?</title>
@@ -179,30 +193,6 @@
         <category>Azure DevOps</category>
         
         <category>GitHub</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>The right way to manage nested callbacks</title>
-        <description>&lt;p&gt;In case you do not know what a callback is, please refer to &lt;a href=&quot;https://husseinfaara.com/articles/what-the-heck-is-a-callback&quot;&gt;this&lt;/a&gt; awesome article by &lt;a href=&quot;https://husseinfaara.com/&quot;&gt;Hussein Faara&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;All in all, callbacks are great. With callback, we are allowed to write code in JavaScript asynchronously and it just work. However, in real world, as a Software Engineer, we do not simply expect things to just work and be satisfied with it. We also look at other things. For example, maintainability.&lt;/p&gt; &lt;p&gt;Let’s work with a real world example here to demonstrate what we want to talk about, say, we would like to add couple of songs to a...</description>
-        <pubDate>Wed, 19 Jun 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/06/19/The-right-way-to-manage-nested-callbacks</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>JavaScript</category>
-        
-        <category>Asynchronous Programming</category>
-        
-        <category>Callback</category>
-        
-        <category>Callback hell</category>
-        
-        <category>Async/await</category>
-        
-        <category>Promise</category>
         
         
       </item>

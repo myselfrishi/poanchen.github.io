@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "What to do when git branch has diverged?",
+      "category" : "",
+      "tags"     : "Git and GitHub",
+      "url"      : "/blog/2020/09/19/what-to-do-when-git-branch-has-diverged",
+      "date"     : "19 Sep 2020"
+    } ,
+  
+    {
       "title"    : "How to make an automotive Wi-Fi plant watering system that is connected to Azure IoT Central?",
       "category" : "",
       "tags"     : "Azure IoT Central, Arduino, Arduino IDE, DIY, ESP8266, and Wi-Fi",

@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to display an Alexa rank chart in your website?",
+      "category" : "",
+      "tags"     : "Alexa, Azure Blob Storage, Chart.js, Front-end, Google Sheets, IFTTT, and RESTful API",
+      "url"      : "/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website",
+      "date"     : "20 Sep 2020"
+    } ,
+  
+    {
       "title"    : "What to do when git branch has diverged?",
       "category" : "",
       "tags"     : "Git and GitHub",

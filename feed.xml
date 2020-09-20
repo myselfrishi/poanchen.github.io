@@ -5,9 +5,33 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Sep 2020 13:23:19 +0000</pubDate>
-    <lastBuildDate>Sat, 19 Sep 2020 13:23:19 +0000</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2020 19:40:26 +0000</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2020 19:40:26 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>How to display an Alexa rank chart in your website?</title>
+        <description>&lt;p&gt;Ever wonder how to display an &lt;a href=&quot;https://www.alexa.com/siteinfo/poanchen.github.io#section_traffic&quot;&gt;Alexa rank chart&lt;/a&gt; in your website? You are in luck, in this tutorial, we are going to show you how it can be done.&lt;/p&gt; &lt;p&gt;In a nutshell, this is how it works. We would query this free &lt;a href=&quot;https://data.alexa.com/data?cli=10&amp;amp;url=poanchen.github.io&quot;&gt;Alexa API endpoint&lt;/a&gt; once a day to get the Alexa global rank for a specifc website. We then &lt;a href=&quot;https://docs.python.org/3.7/library/xml.etree.elementtree.html&quot;&gt;parse&lt;/a&gt; the result as XML and send the rank to &lt;a href=&quot;https://www.google.com/sheets/about&quot;&gt;Google Sheets&lt;/a&gt; via &lt;a href=&quot;https://ifttt.com&quot;&gt;IFTTT&lt;/a&gt;. Now that we have the rank stored in &lt;a href=&quot;https://www.google.com/sheets/about&quot;&gt;Google Sheets&lt;/a&gt;, we simply need to download it and go through...</description>
+        <pubDate>Sun, 20 Sep 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/09/20/How-to-display-an-Alexa-rank-chart-in-your-website</guid>
+        
+        <category>Alexa</category>
+        
+        <category>Azure Blob Storage</category>
+        
+        <category>Chart.js</category>
+        
+        <category>Front-end</category>
+        
+        <category>Google Sheets</category>
+        
+        <category>IFTTT</category>
+        
+        <category>RESTful API</category>
+        
+        
+      </item>
     
       <item>
         <title>What to do when git branch has diverged?</title>
@@ -173,26 +197,6 @@
         <category>Cron</category>
         
         <category>Bash</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to add Azure Pipelines badge to your repository's README in GitHub?</title>
-        <description>&lt;p&gt;Ever wanted to be cool? not just anyone-kind-cool but developer-kind-cool or better yet Azure-kind-cool. Do you have a project hosting on GitHub and you would like to show the status of your build? How green it has always been? You are in luck. In this short tutorial, I would like to show you guys how to easily add Azure Pipelines badge into your README on GitHub.&lt;/p&gt; &lt;p&gt;Simply head over to your Azure DevOps page (in this case, my page url looks like this https://dev.azure.com/poanchen/poanchen.github.io), &lt;img src=&quot;/img/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub/1.JPG&quot; alt=&quot;Azure DevOps page&quot; /&gt;&lt;/p&gt; &lt;p&gt;Next, ensure Pipeline -&amp;gt; Builds tab is opened. &lt;img src=&quot;/img/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub/2.png&quot;...</description>
-        <pubDate>Fri, 12 Jul 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/07/12/How-to-add-Azure-Pipelines-badge-to-your-repository-s-README-in-GitHub</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Azure</category>
-        
-        <category>Azure Pipelines</category>
-        
-        <category>Azure DevOps</category>
-        
-        <category>GitHub</category>
         
         
       </item>

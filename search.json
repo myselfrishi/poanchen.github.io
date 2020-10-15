@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "What Are Algorithms &amp; Why Are They Important?",
+      "category" : "",
+      "tags"     : "Algorithms, Juni Learning, and Partnership",
+      "url"      : "/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important",
+      "date"     : "14 Oct 2020"
+    } ,
+  
+    {
       "title"    : "How to display an Alexa rank chart in your website?",
       "category" : "",
       "tags"     : "Alexa, Azure Blob Storage, Chart.js, Front-end, Google Sheets, IFTTT, and RESTful API",

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Why using a global variable to solve Leetcode problem can be a bad idea?</title>
+  <title>What Are Algorithms & Why Are They Important?</title>
   <meta name="description" content="A blog written by PoAn (Baron) Chen.">
 
   <!-- Google Authorship Markup -->
@@ -24,15 +24,15 @@
   <!-- Social: Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@poanbaronchen">
-  <meta name="twitter:title" content="Why using a global variable to solve Leetcode problem can be a bad idea?">
+  <meta name="twitter:title" content="What Are Algorithms & Why Are They Important?">
   <meta name="twitter:description" content="A blog written by PoAn (Baron) Chen.">
   
   <meta property="twitter:image:src" content="https://poanchen.github.io/img/blog-image.png">
   
 
   <!-- Social: Facebook / Open Graph -->
-  <meta property="og:url" content="https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea">
-  <meta property="og:title" content="Why using a global variable to solve Leetcode problem can be a bad idea?">
+  <meta property="og:url" content="https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important">
+  <meta property="og:title" content="What Are Algorithms & Why Are They Important?">
   
   <meta property="og:image" content="https://poanchen.github.io/img/blog-image.png">
   
@@ -40,7 +40,7 @@
   <meta property="og:site_name" content="PoAn (Baron) Chen's site">
 
   <!-- Social: Google+ / Schema.org  -->
-  <meta itemprop="name" content="Why using a global variable to solve Leetcode problem can be a bad idea?"/>
+  <meta itemprop="name" content="What Are Algorithms & Why Are They Important?"/>
   <meta itemprop="description" content="A blog written by PoAn (Baron) Chen.">
   <meta itemprop="image" content="https://poanchen.github.io/img/blog-image.png"/>
 
@@ -67,7 +67,7 @@
   <meta name="theme-color" content="#0562DC">
 
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea">
+  <link rel="canonical" href="https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important">
   <link rel="alternate" type="application/rss+xml" title="PoAn (Baron) Chen's site" href="https://poanchen.github.io/feed.xml" />
   
   <!-- Buy Me a Coffee widget -->
@@ -79,9 +79,9 @@
     <header class="header-post" role="banner">
     <div class="content">
         
-            <time itemprop="datePublished" datetime="2019-09-13 08:30:30 +0000" class="date">13 Sep 2019</time>
+            <time itemprop="datePublished" datetime="2020-10-14 08:30:30 +0000" class="date">14 Oct 2020</time>
         
-        <h1 class="post-title" itemprop="name">Why using a global variable to solve Leetcode problem can be a bad idea?</h1>
+        <h1 class="post-title" itemprop="name">What Are Algorithms & Why Are They Important?</h1>
         
             <p id="stats"></p>
 
@@ -169,106 +169,193 @@
 
     <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
       <article role="article" id="scroll" class="post-content" itemprop="articleBody">
-          <p>I recently run into the issue of having inconsistent result for the exact same test case that I run locally comparing with the code that <a href="https://leetcode.com">Leetcode</a> runs on their server. How is that even possible? At first, my suspicion would be the development environment but I code my solution right in their website. In addition, other people solution got accepted, so it is gotta be something wrong with my code. And, it turns out, it is. It is because of how I use the global variable in my solution.</p>
+          <h2 id="what-is-an-algorithm">What Is An Algorithm?</h2>
 
-<p>Before I talk about how using a global variable to solve <a href="https://leetcode.com">Leetcode</a> problem can be a bad idea. I want to show you my code first.</p>
-<div id="dfs"></div>
+<p>An algorithm is a set of step-by-step procedures, or a set of rules to follow, for completing a specific task or solving a particular problem. Algorithms are all around us. The recipe for baking a cake, the method we use to solve a long division problem, and the process of doing laundry are all examples of an algorithm. Here’s what baking a cake might look like, written out as a list of instructions, just like an algorithm:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-</span>
-<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-  <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-      <span class="k">return</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
-  <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ans</span></code></pre></figure>
+<ol>
+  <li>Preheat the oven</li>
+  <li>Gather the ingredients</li>
+  <li>Measure out the ingredients</li>
+  <li>Mix together the ingredients to make the batter</li>
+  <li>Grease a pan</li>
+  <li>Pour the batter into the pan</li>
+  <li>Put the pan in the oven</li>
+  <li>Set a timer</li>
+  <li>When the timer goes off, take the pan out of the oven</li>
+  <li>Enjoy!</li>
+</ol>
 
-<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea/simplePreorderTraversal.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+<p>Algorithmic programming is all about writing a set of rules that instruct the computer how to perform a task. A computer program is essentially an algorithm that tells the computer what specific steps to execute, in what specific order, in order to carry out a specific task. Algorithms are written using particular syntax, depending on the programming language being used.</p>
 
-<p>This is a simple dfs recursion solution for pre-order traversal. As you can see, we have a global list ans to collect all the node value while we traverse. At the end, we simply need to return the list ans and we are done.</p>
+<p>Here is an example of a simple algorithm that will add two number and return its result using the programming language of Java,</p>
 
-<p>Next, I would like to reveal of how <a href="https://leetcode.com">Leetcode</a> evaluate the submitted solution (At least, this is how I would have done it and it makes sense according to the results that I am seeing). To explain it in one sentence, <a href="https://leetcode.com">Leetcode</a> simply treats your solution as a function of the code and that is it. Let me show you in code, on how it will work,</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PureFunction</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span> <span class="c1">// 15</span>
+    <span class="o">}</span>
+  <span class="o">}</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-</span>
-<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-  <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">def</span> <span class="nf">helper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-      <span class="k">return</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">val</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
-  <span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="bp">self</span><span class="p">.</span><span class="n">helper</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ans</span>
-  <span class="k">def</span> <span class="nf">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">correctAnswer</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="c1"># ...
-</span>  <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">testCases</span> <span class="o">=</span> <span class="p">[...]</span>
-    <span class="n">testCasesAnswer</span> <span class="o">=</span> <span class="p">[...]</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">correctness</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">testCases</span><span class="p">:</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">preorderTraversal</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-      <span class="k">if</span> <span class="n">evulateAnswer</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">testCasesAnswer</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
-        <span class="n">correctness</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">break</span>
-      <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">correctness</span>
-  <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span></code></pre></figure>
+<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/11/what-is-a-pure-function-and-how-can-it-be-a-good-practice/PureFunction.java" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
 
-<p><a href="https://github.com/poanchen/code-for-blog/blob/master/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea/leetcodeTestCase.py" target="_blank">source code</a> hosted on <a href="https://github.com" target="_blank">GitHub</a></p>
+<p>This is essentially an algorithm that will find the value of c in this formula, a + b = c.</p>
 
-<p>As you can see, for each test cases to be run, answer will be stored in the global list ans. Once it has been run once, the list will be populated with the result. Every time you call the next one, it kept on using the same global list ans. As a result, the global list ans not only have the solution for the current test case, but it also got mixed up with the previous solution. That is why, you get wrong answers when you have multiple test cases but works when you have just one test case. Mystery solved. My suggestion would be, just don’t use the global variable in your solution at all or simply clear them whenever you are finished with them. Hence, using a global variable in your solution can be a bad idea because it might/will give you an inconsistent result across your local machine and the <a href="https://leetcode.com">Leetcode</a> server.</p>
+<h2 id="types-of-algorithms">Types of Algorithms</h2>
 
-<p>Whoa.</p>
+<p>Algorithms are classified based on the concepts that they use to accomplish a task. While there are many types of algorithms, the most fundamental types of computer science algorithms are:</p>
+<ol>
+  <li>Divide and conquer algorithms – divide the problem into smaller subproblems of the same type; solve those smaller problems, and combine those solutions to solve the original problem. Here is an <a href="/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm#binarySearch">example</a> of Divide and conquer algorithm, a binary search algorithm that will search an element from a sorted array, for each run, it would either find it or divide the problem into half and head into the half that for sure has the answer. Continuing doing so until an element has been found if the element is in the array.</li>
+  <li>Brute force algorithms – try all possible solutions until a satisfactory solution is found. Here is an <a href="/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea#dfs">example</a> of Brute force algorithm, a Depth-first Search algorithm that will basically traverse the whole tree before giving up.</li>
+  <li>Randomized algorithms – use a random number at least once during the computation to find a solution to the problem.</li>
+  <li>Greedy algorithms – find an optimal solution at the local level with the intent of finding an optimal solution for the whole problem. Here is an <a href="/blog/2018/11/23/how-to-calculate-time-complexity-of-an-algorithm#maxValueListOperators">example</a> of Greedy algorithm.</li>
+  <li>Recursive algorithms – solve the lowest and simplest version of a problem to then solve increasingly larger versions of the problem until the solution to the original problem is found. Here is an <a href="/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java#recursion">example</a> of Recursive algorithm.</li>
+  <li>Backtracking algorithms – divide the problem into subproblems, each which can be attempted to be solved; however, if the desired solution is not reached, move backwards in the problem until a path is found that moves it forward. Here is an <a href="https://github.com/poanchen/leetcode-problems/blob/master/Word%20Search/Solution.java">example</a> of Backtracking algorithm.</li>
+  <li>Dynamic programming algorithms – break a complex problem into a collection of simpler subproblems, then solve each of those subproblems only once, storing their solution for future use instead of re-computing their solutions. Here is an <a href="/blog/2018/02/09/Solving-the-Fibonacci-problem-using-Dynamic-Programming-in-Java#dp">example</a> of Dynamic programming algorithm.</li>
+</ol>
 
-<p>Okay, do let me know in the comments below if you have any questions/concerns and I would be happy to help in any way. Happy Leetcoding!</p>
+<h2 id="example-of-an-algorithm">Example of an Algorithm</h2>
+
+<h3 id="solving-a-rubiks-cube">Solving a Rubik’s Cube</h3>
+
+<p><img src="\img\2020\10\14\What-Are-Algorithms-and-Why-Are-They-Important/rubiks-cube.jpg" alt="rubiks cube" />
+Source: <a href="https://runrunchan.wordpress.com/2014/06/28/rubiks-cube">RUBIK’S CUBE</a> by <a href="https://runrunchan.wordpress.com/author/runrunchan">runrunchan</a></p>
+
+<p>There are a number of different algorithms, from simple to very complicated, that exist for solving a Rubik’s cube. Below is just one simple algorithm. First, let’s specify a notation to use (similar to picking a programming language).</p>
+
+<p>Each of the six faces of a Rubik’s cube can be represented by the first letter of their name:</p>
+
+<ul>
+  <li>U - up</li>
+  <li>D - down</li>
+  <li>L - left</li>
+  <li>R - right</li>
+  <li>F - front</li>
+  <li>B - back</li>
+</ul>
+
+<p>Each face can be turned in three different ways/directions. Using U as an example, these are represented as:</p>
+
+<ul>
+  <li>U - clockwise quarter-turn of the upper face</li>
+  <li>U’ - counter-clockwise quarter-turn of the upper face</li>
+  <li>U2 - half turn in either direction of the upper face</li>
+</ul>
+
+<p>Now, let’s go through the steps in the algorithm to solve a Rubik’s Cube. Feel free to grab one of your own and follow along!</p>
+
+<p>Step 1: The Cross</p>
+<ol>
+  <li>First, flip some edges so that there is a white cross on the upper face.</li>
+  <li>Apply the following turns: F, R’, D’, R, F2, R’, U, R, U’, R’, R2, L2, U2, R2, L2.</li>
+  <li>The cross is now solved.</li>
+</ol>
+
+<p>Step 2: The White Corners</p>
+
+<ol>
+  <li>The edges on the white face are now complete, but the corners remain.</li>
+  <li>Depending on where the white-orange-green corner is in the puzzle, apply one of the following series of turns:
+    <ol>
+      <li>Bottom: R’, D’, R, D (repeat until the corner moves to its correct place)</li>
+      <li>Top: R’, D’, R, D (this moves the corner to the bottom; then, follow the above instructions)</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Step 3: Middle Layer Edges</p>
+
+<ol>
+  <li>Flip the cube so that the white is on the bottom.</li>
+  <li>Look for an edge that is on the top face and doesn’t have yellow on it.</li>
+  <li>Perform a U-turn so that the color on the front face of the edge matches with the center.</li>
+  <li>Depending on the direction that the edge could go, apply one of the following series of turns:
+    <ol>
+      <li>Left: U’, L’, U, L, U, F, U’, F’</li>
+      <li>Right: U, R, U’, R’, U’, F’, U, F)</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Step 4: Yellow Cross</p>
+
+<ol>
+  <li>Apply the following turns, until a yellow cross on the face appears with the yellow center: F, R, U, R’, U’, F’.</li>
+  <li>If there is an “L” shape, where the two yellow pieces showing are adjacent to each other, apply the following turns: F, U, R, U’, R’, F’.</li>
+  <li>If there is a “Line” shape, which is horizontal, apply the following turns: F, R, U, R’, U’, F’.</li>
+</ol>
+
+<p>Step 5: Sune and Antisune</p>
+
+<ol>
+  <li>Look at the face with the yellow center.</li>
+  <li>Depending on the below contingencies, apply one of the following series of turns:
+    <ol>
+      <li>If there is only one oriented corner: R, U, R’, U, R, U2, R’ (repeat until the desired position is attained)</li>
+      <li>There is one oriented corner and one right-facing corner: U2, R, U2, R’, U’, R, U’, R’</li>
+    </ol>
+  </li>
+</ol>
+
+<p>Step 6: Finishing the puzzle</p>
+
+<ol>
+  <li>Look for sets of “headlights” (two stickers of the same color in the same row, separated by a sticker of a different color).</li>
+  <li>Depending on how many there are, apply one of the following series of turns:
+    <ol>
+      <li>If there are a set of headlights on each side: R, U’, R, U, R, U, R, U’, R’, U’, R2</li>
+      <li>Otherwise: R’, F, R’, B2, R, F’, R’, B2, R2</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="sorting-algorithms">Sorting Algorithms</h2>
+
+<p>A sorting algorithm is an algorithm that puts elements of a list in a certain order, usually in numerical or lexicographical order. Sorting is often an important first step in algorithms that solves more complex problems. There are a large number of sorting algorithms, each with their own benefits and costs. Below, we will focus on some of the more famous sorting algorithms.</p>
+
+<ol>
+  <li>Linear sort: Find the smallest element in the list to be sorted, add it to a new list, and remove it from the original list. Repeat this until the original list is empty.</li>
+  <li>Bubble sort: Compare the first two elements in the list, and if the first is greater than the second, swap them. Repeat this with every pair of adjacent elements in the list. Then, repeat this process until the list is fully sorted.</li>
+  <li>Insertion sort: Compare each element in the list to all the prior elements until a smaller element is found. Swap these two elements. Repeat this process until the list is fully sorted.</li>
+</ol>
+
+<h2 id="where-algorithms-are-used-in-computer-science">Where Algorithms are Used in Computer Science?</h2>
+
+<p>Algorithms are used in every part of computer science. They form the field’s backbone. In computer science, an algorithm gives the computer a specific set of instructions, which allows the computer to do everything, be it running a calculator or running a rocket. Computer programs are, at their core, algorithms written in programming languages that the computer can understand. Computer algorithms play a big role in how social media works: which posts show up, which ads are seen, and so on. These decisions are all made by algorithms. Google’s programmers use algorithms to optimize searches, predict what users are going to type, and more. In problem-solving, a big part of computer programming is knowing how to formulate an algorithm.</p>
+
+<h2 id="why-are-algorithms-important-to-understand">Why are Algorithms Important to Understand?</h2>
+
+<p>Algorithmic thinking, or the ability to define clear steps to solve a problem, is crucial in many different fields. Even if we’re not conscious of it, we use algorithms and algorithmic thinking all the time. Algorithmic thinking allows students to break down problems and conceptualize solutions in terms of discrete steps. Being able to understand and implement an algorithm requires students to practice structured thinking and reasoning abilities.</p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
-<p>Hopefully you enjoyed this article and will inspire you to write more pure functions in the near future. Let me know if this helps you. Thank you for reading!</p>
+<p>For full disclosure, this article is a combined work mostly written by <a href="https://junilearning.com">Juni Learning</a> and slightly modified by <a href="https://poanchen.github.io">PoAn (Baron) Chen</a>. This <a href="https://junilearning.com/blog/college-and-career/preparing-for-the-ap-computer-science-a-exam">article</a> originally appeared on <a href="https://junilearning.com">junilearning.com</a>. Hopefully, by bring-in different writting technic, it will attract more readers to this site. I hope that this article will help some of you to understand what an algorithms is and why they are important and thank you for reading!</p>
 
 <h2 id="resources">Resources</h2>
 
-<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BWhy using a global variable to solve Leetcode problem can be a bad idea?%5D(https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea)%0A*+GitHub+Source+URL%3A+%5Bwhy-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2019-09-13-why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea.md)">let us know</a>.</p>
+<p>I’ll try to keep this list current and up to date. If you know of a great resource you’d like to share or notice a broken link, please <a href="https://github.com/poanchen/poanchen.github.io/issues/new?title=&amp;body=%0A%0A%0A%5BEnter+feedback+here%5D%0A%0A%0A---%0A%23%23%23%23+Document+Details%0A%0A%E2%9A%A0+*Do+not+edit+this+section.*%0A%0A*+Blog+URL%3A+%5BWhat Are Algorithms &amp; Why Are They Important?%5D(https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important)%0A*+GitHub+Source+URL%3A+%5BWhat-Are-Algorithms-and-Why-Are-They-Important.md%5D(https://github.com/poanchen/poanchen.github.io/blob/will-jekyll-template/_posts/2020-10-14-What-Are-Algorithms-and-Why-Are-They-Important.md)">let us know</a>.</p>
 
 <h3 id="getting-started">Getting started</h3>
 
 <ul>
-  <li><a href="https://support.leetcode.com/hc/en-us/articles/360011834174-I-encountered-Wrong-Answer-Runtime-Error-for-a-specific-test-case-When-I-test-my-code-using-this-test-case-it-produced-the-correct-output-Why-">I encountered Wrong Answer/Runtime Error for a specific test case. When I test my code using this test case, it produced the correct output. Why?</a> by <a href="https://leetcode.com">Leetcode</a>.</li>
-  <li><a href="https://yangshun.github.io/tech-interview-handbook/algorithms/algorithms-introduction/#general-tips">Algorithms Introduction</a> by <a href="https://github.com/yangshun">Yangshun Tay</a>.</li>
+  <li><a href="https://junilearning.com/blog/college-and-career/preparing-for-the-ap-computer-science-a-exam">Preparing for the AP Computer Science A Exam - Juni Learning</a> by <a href="https://junilearning.com">Juni Learning</a>.</li>
 </ul>
 
       </article>
       <section class="share">
   <h3>Share</h3>
-  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;Why using a global variable to solve Leetcode problem can be a bad idea?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea"
+  <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;What Are Algorithms & Why Are They Important?&quot; by &#64;poanbaronchen https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important"
   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
     <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
   </a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea"
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important"
   onclick="window.open(this.href, 'facebook-share', 'width=550,height=296');return false;" title="Share on Facebook">
     <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
   </a>
-  <a href="mailto:?subject=Check out this great article, Why using a global variable to solve Leetcode problem can be a bad idea?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea">
+  <a href="mailto:?subject=Check out this great article, What Are Algorithms & Why Are They Important?&body=Hi, I found this webpage and thought you might like it, https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important">
     <svg class="icon icon-email"><use xlink:href="#icon-email"></use></svg>
   </a>
 </section>
@@ -278,19 +365,19 @@
     
     
     
-    <img itemprop="image" class="img-rounded" src="/img/authors/poanchen.jpg" alt="PoAn (Baron) Chen">
+    <img itemprop="image" class="img-rounded" src="/img/authors/junilearning.png" alt="Juni Learning">
     <p class="def">
       Author
     </p>
     <h3 class="name">
       
-        <a itemprop="name" href="https://github.com/poanchen" target="_blank">
-          PoAn (Baron) Chen
+        <a itemprop="name" href="https://junilearning.com" target="_blank">
+          Juni Learning
         </a>
       
     </h3>
     <p class="desc">
-      Software Engineer at Microsoft. Graduated from @uvic. Previously worked at @illumina, @ACDSee, @AEHelp and @AcePersonnel1. My words are my own.
+      We are an award-winning online computer science and mathematics academy that offers private online courses to students from ages 8–18.
     </p>
   </div>
 </section>

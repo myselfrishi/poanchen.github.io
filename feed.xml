@@ -5,9 +5,25 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Sep 2020 05:42:27 +0000</pubDate>
-    <lastBuildDate>Mon, 21 Sep 2020 05:42:27 +0000</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2020 05:43:04 +0000</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2020 05:43:04 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>What Are Algorithms &amp; Why Are They Important?</title>
+        <description>&lt;h2 id=&quot;what-is-an-algorithm&quot;&gt;What Is An Algorithm?&lt;/h2&gt; &lt;p&gt;An algorithm is a set of step-by-step procedures, or a set of rules to follow, for completing a specific task or solving a particular problem. Algorithms are all around us. The recipe for baking a cake, the method we use to solve a long division problem, and the process of doing laundry are all examples of an algorithm. Here’s what baking a cake might look like, written out as a list of instructions, just like an algorithm:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Preheat the oven&lt;/li&gt; &lt;li&gt;Gather the ingredients&lt;/li&gt; &lt;li&gt;Measure out the ingredients&lt;/li&gt; &lt;li&gt;Mix together the ingredients to make the...</description>
+        <pubDate>Wed, 14 Oct 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/10/14/What-Are-Algorithms-and-Why-Are-They-Important</guid>
+        
+        <category>Algorithms</category>
+        
+        <category>Juni Learning</category>
+        
+        <category>Partnership</category>
+        
+        
+      </item>
     
       <item>
         <title>How to display an Alexa rank chart in your website?</title>
@@ -179,24 +195,6 @@
         <category>React</category>
         
         <category>Redux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>The easiest way to make Let's Encrypt renewal automated</title>
-        <description>&lt;p&gt;Are you using Let’s Encrypt as your CA (certificate authority) to issue you a trusted certificate for your own domain? Sometimes forgetting to renew when it expires every 90 days? Keep getting email warning you about the expiry date of your SSL certificate? or find out the hard way by getting email about the complain of your site not being able to access due to the expired SSL certificate? You are in luck, in this short tutorial, I am going to show you guys how to make Let’s Encrypt renewal automatic. So that you will never have to worry about...</description>
-        <pubDate>Sat, 13 Jul 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/07/13/The-easiest-way-to-make-Let-s-Encrypt-renewal-automated</guid>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Let's Encrypt</category>
-        
-        <category>Cron</category>
-        
-        <category>Bash</category>
         
         
       </item>

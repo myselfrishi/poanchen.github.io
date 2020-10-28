@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to prepopulate GitHub issue to make people&#39;s life easier in Jekyll?",
+      "category" : "",
+      "tags"     : "GitHub and Jekyll",
+      "url"      : "/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll",
+      "date"     : "27 Oct 2020"
+    } ,
+  
+    {
       "title"    : "How to activate virtual environment in PowerShell?",
       "category" : "",
       "tags"     : "Python, Virtual Environment, and PowerShell",

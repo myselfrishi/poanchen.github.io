@@ -5,9 +5,23 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Oct 2020 08:04:22 +0000</pubDate>
-    <lastBuildDate>Fri, 23 Oct 2020 08:04:22 +0000</lastBuildDate>
+    <pubDate>Wed, 28 Oct 2020 08:35:54 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Oct 2020 08:35:54 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>How to prepopulate GitHub issue to make people's life easier in Jekyll?</title>
+        <description>&lt;p&gt;Have you ever click on a button that take you to GitHub issue that look something like this,&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;\img\2020\10\27\How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll/githubissue.JPG&quot; alt=&quot;githubissue&quot; /&gt;&lt;/p&gt; &lt;p&gt;As you can see, the information about the blog URL and the GitHub source URL is already prepopulated. User simply need to put down their concerns and that is it. Look nice and all right?&lt;/p&gt; &lt;p&gt;Ever wonder how this works? You are in luck, this article will teach you how it works and how to include it in your Jekyll site.&lt;/p&gt; &lt;p&gt;This is actually pretty simple. The magic is done through the query parameters.&lt;/p&gt; &lt;h3 id=&quot;what-is-a-query-parameters&quot;&gt;What is a...</description>
+        <pubDate>Tue, 27 Oct 2020 08:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/10/27/How-to-prepopulate-GitHub-issue-to-make-people-life-easier-in-jekyll</guid>
+        
+        <category>GitHub</category>
+        
+        <category>Jekyll</category>
+        
+        
+      </item>
     
       <item>
         <title>How to activate virtual environment in PowerShell?</title>
@@ -177,22 +191,6 @@
         <category>PoAn (Baron) Chen</category>
         
         <category>TypeScript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Why using a global variable to solve Leetcode problem can be a bad idea?</title>
-        <description>&lt;p&gt;I recently run into the issue of having inconsistent result for the exact same test case that I run locally comparing with the code that &lt;a href=&quot;https://leetcode.com&quot;&gt;Leetcode&lt;/a&gt; runs on their server. How is that even possible? At first, my suspicion would be the development environment but I code my solution right in their website. In addition, other people solution got accepted, so it is gotta be something wrong with my code. And, it turns out, it is. It is because of how I use the global variable in my solution.&lt;/p&gt; &lt;p&gt;Before I talk about how using a global variable to...</description>
-        <pubDate>Fri, 13 Sep 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/09/13/why-using-a-global-variable-to-solve-Leetcode-problem-can-be-a-bad-idea</guid>
-        
-        <category>Python</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>Leetcode</category>
         
         
       </item>

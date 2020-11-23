@@ -5,9 +5,25 @@
     <description>A blog written by PoAn (Baron) Chen.</description>
     <link>https://poanchen.github.io/</link>
     <atom:link href="https://poanchen.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2020 08:35:54 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2020 08:35:54 +0000</lastBuildDate>
+    <pubDate>Mon, 23 Nov 2020 10:49:57 +0000</pubDate>
+    <lastBuildDate>Mon, 23 Nov 2020 10:49:57 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>How to make a Linux-based Azure Function works with file system?</title>
+        <description>&lt;p&gt;Are you having trouble building a Linux-based &lt;a href=&quot;https://azure.microsoft.com/services/functions&quot;&gt;Azure Function&lt;/a&gt; that needs to work with file system? You are in luck! In this article, I am going to quickly talk about some of the tips working with Linux-based Azure Function, specifically on file system.&lt;/p&gt; &lt;p&gt;As you should know, Azure Function is serverless. This means that &lt;a href=&quot;https://azure.microsoft.com&quot;&gt;Azure&lt;/a&gt; is going to take care all of your computing resources. Either few or millions. Azure will handle that for you. What you need to do is to provide blocks of code for Azure Function to run. This is extremely useful for resources who...</description>
+        <pubDate>Mon, 23 Nov 2020 00:30:30 +0000</pubDate>
+        <link>https://poanchen.github.io/blog/2020/11/23/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</link>
+        <guid isPermaLink="true">https://poanchen.github.io/blog/2020/11/23/How-to-make-a-Linux-based-Azure-Function-works-with-file-system</guid>
+        
+        <category>Azure</category>
+        
+        <category>Azure Function</category>
+        
+        <category>Linux</category>
+        
+        
+      </item>
     
       <item>
         <title>How to prepopulate GitHub issue to make people's life easier in Jekyll?</title>
@@ -169,28 +185,6 @@
         <category>npm</category>
         
         <category>PoAn (Baron) Chen</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to create an Azure IoT Central application programmatically?</title>
-        <description>&lt;p&gt;Before I dive into the code and show you guys how to create an Azure IoT Central application programmatically, I would like to give an introduction of what an Azure IoT Central is and why do we need it?&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/services/iot-central&quot;&gt;Azure IoT Central&lt;/a&gt; is a&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Connect fast with a hassle-free, hosted IoT platform&lt;br /&gt;&lt;br /&gt; Easily connect, monitor, and manage your Internet of Things (IoT) assets at scale. Azure IoT Central is a hosted, extensible software as a service (SaaS) platform that simplifies setup of your IoT solution and helps reduce the burden and costs of IoT management, operations,...</description>
-        <pubDate>Sat, 23 Nov 2019 08:30:30 +0000</pubDate>
-        <link>https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically</link>
-        <guid isPermaLink="true">https://poanchen.github.io/blog/2019/11/23/how-to-create-an-azure-iot-central-application-programmatically</guid>
-        
-        <category>Azure</category>
-        
-        <category>Azure IoT</category>
-        
-        <category>Azure IoT Central</category>
-        
-        <category>Node.js</category>
-        
-        <category>PoAn (Baron) Chen</category>
-        
-        <category>TypeScript</category>
         
         
       </item>

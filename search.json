@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "How to make a Linux-based Azure Function works with file system?",
+      "category" : "",
+      "tags"     : "Azure, Azure Function, and Linux",
+      "url"      : "/blog/2020/11/23/How-to-make-a-Linux-based-Azure-Function-works-with-file-system",
+      "date"     : "23 Nov 2020"
+    } ,
+  
+    {
       "title"    : "How to prepopulate GitHub issue to make people&#39;s life easier in Jekyll?",
       "category" : "",
       "tags"     : "GitHub and Jekyll",
